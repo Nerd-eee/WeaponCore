@@ -140,6 +140,8 @@ namespace CoreSystems.Support
             ClientAVLevel = 0;
             CurrentLifetime = 0;
             ModelRotation = false;
+
+            avr.AvAdvBillboardsEffectPool.Push(this);
     }
     }
     internal class AdvBLineCache

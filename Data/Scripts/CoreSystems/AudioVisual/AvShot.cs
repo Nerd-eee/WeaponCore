@@ -1488,7 +1488,14 @@ namespace CoreSystems.Support
             }
 
             for (int j = TrailSteps.Count - 1; j >= 0; j--)
-                Session.Av.Trails.Push(TrailSteps[j]);
+            {
+                var trail = TrailSteps[j];
+                trail.Parent = null;
+                trail.Step = 0;
+                trail.TailPos = Vector3D.Zero;
+                trail.Line = default(LineD);
+                Session.Av.Trails.Push(trail);
+            }
 
             TrailSteps.Clear();
 
